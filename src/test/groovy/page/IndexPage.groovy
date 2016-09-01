@@ -12,7 +12,7 @@ class IndexPage extends Page {
     // 勤務地のテキストボックス
     searchLocation { $('#jsi-input-location')}
     // 検索ボタン
-    searchButton { $('#jsi-top-search-form').$('div', class: "pg-top-content-btnarea") }
+    searchButton { $('#jsi-top-search-form').$('div', class: "pg-top-content-btnarea").$('button', class: "sg-button secondary") }
     // TVCM公開中!!の画像が表示されている
     movieButton { $('img.btn-badge-movie') }
   }
