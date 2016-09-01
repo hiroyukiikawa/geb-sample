@@ -43,6 +43,7 @@ drivers.each { driver ->
 
         // If you wanted to set the baseUrl in your build…
         // systemProperty "geb.build.baseUrl", "http://myapp.com"
+        systemProperty "geb.build.baseUrl", System.properties['geb.build.baseUrl']
     }
 }
 
