@@ -7,9 +7,11 @@ class SampleTest extends GebReportingSpec {
     when: "スタンバイを表示"
     go "https://jp.stanby.com"
 
-    then: "h2要素をチェック"
-    $('h2.pg-top-content-heading', 0).isDisplayed()
-    $('h2.pg-top-content-heading', 0).text() == "スタンバイは、インターネット中の仕事を地図で探せる仕事検索アプリです"
+    then: "タイトルをチェック"
+    title == "スタンバイ 地図で仕事が探せる求人サイト"
+
+    and: "TVCM公開中!!の画像が表示されている"
+    $('img.btn-badge-movie').isDisplayed()
   }
 
   def "トップページを表示して検索する"() {
@@ -24,6 +26,9 @@ class SampleTest extends GebReportingSpec {
 
     then: "検索結果画面が表示される"
     title == "ビズリーチの求人 | スタンバイ"
+
+    and: "検索フォームに「ビズリーチ」と入力されている"
+    $("#jsi-keyword").value() == "ビズリーチ"
   }
 
   @Unroll("#keyword, locationで検索する")
